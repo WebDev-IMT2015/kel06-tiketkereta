@@ -13,7 +13,12 @@ class CreateKeretaTable extends Migration
      */
     public function up()
     {
-        //
+         Schema::create('kereta', function (Blueprint $table) {
+            $table->string('kode');
+            $table->string('nama');
+            $table->string('jumlah_gerbong');
+            $table->string('kapasitas_gerbong');
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ class CreateKeretaTable extends Migration
      */
     public function down()
     {
-        //
+         Schema::dropIfExists('kereta');
     }
 }
