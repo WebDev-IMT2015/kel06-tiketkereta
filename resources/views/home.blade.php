@@ -8,29 +8,30 @@
                 <div class="panel-heading">Formulir Pembelian Tiket </div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" action="beli" method="POST">
+                    {{ csrf_field() }}
                       <div class="form-group">
-                        <label for="inputNama" class="col-sm-2 control-label">Nama</label>
+                        <label for="name" class="col-sm-2 control-label">Name</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" id="inputNama" placeholder="Nama">
+                          <input type="text" class="form-control" name="name" placeholder="Name">
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="inputAlamat" class="col-sm-2 control-label">Alamat</label>
+                        <label for="alamat" class="col-sm-2 control-label">Alamat</label>
                         <div class="col-sm-9">
-                        <textarea class="form-control" id="inputAlamat" placeholder="Alamat" rows="3"></textarea>   
+                        <textarea class="form-control" name="alamat" placeholder="Alamat" rows="3"></textarea>   
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="inputNomor" class="col-sm-2 control-label">Nomor HP</label>
+                        <label for="nomor_hp" class="col-sm-2 control-label">Nomor HP</label>
                         <div class="col-sm-9">
-                       <input type="number" class="form-control" id="inputNomor" placeholder="Nomor HP" min="0">
+                       <input type="number" class="form-control" name="nomor_hp" placeholder="Nomor HP" min="0">
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="inputKtp" class="col-sm-2 control-label">Nomor KTP</label>
+                        <label for="nomor_ktp" class="col-sm-2 control-label">Nomor KTP</label>
                         <div class="col-sm-9">
-                          <input type="number" class="form-control" id="inputKtp" placeholder="Nomor KTP" min="0">
+                          <input type="number" class="form-control" name="nomor_ktp" placeholder="Nomor KTP" min="0">
                         </div>
                       </div>
                       <div class="form-group">

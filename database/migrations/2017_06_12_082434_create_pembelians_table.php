@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKeretaTable extends Migration
+class CreatePembeliansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateKeretaTable extends Migration
      */
     public function up()
     {
-         Schema::create('kereta', function (Blueprint $table) {
-            $table->string('kode');
-            $table->string('nama');
-            $table->string('jumlah_gerbong');
-            $table->string('kapasitas_gerbong');
+        Schema::create('pembelians', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('alamat');
+            $table->string('nomor_hp');
+            $table->string('nomor_ktp');
         });
     }
 
@@ -28,6 +29,6 @@ class CreateKeretaTable extends Migration
      */
     public function down()
     {
-         Schema::dropIfExists('kereta');
+        Schema::dropIfExists('pembelians');
     }
 }
