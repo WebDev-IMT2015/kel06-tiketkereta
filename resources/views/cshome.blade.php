@@ -16,8 +16,6 @@
             <div class="panel panel-default">
                 <div class="container_web">
                     <a href="{{ route('buy') }}">Buy</a>
-                    <br>
-                    <a href="{{ route('train') }}">Train</a>
                     <br>    
                     
                 </div>

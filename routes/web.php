@@ -18,13 +18,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 	Route::get('/', function () {
     	return view('welcome');
 });
-Route::post('beli', 'PembelianController@store');
+Route::get('/home', 'HomeController@index')->name('home');
 
-// Auth::routes();
+Route::resource('buys', 'BuysController');
 
-// Route::get('/home', 'HomeController@index');
+Route::get('/buys', 'BuysController@index')->name('buy');
 
-// Route::group(['middleware' => 'auth'], function () {
-// 	Route::get('/', 'HomeController@index');
-// 	Route::get('home', 'HomeController@index');
-// });
+Route::resource('trains', 'TrainsController');
+
+Route::get('/trains', 'TrainsController@index')->name('train');
+

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -23,8 +24,11 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $user = $request->user();
-        $nama = $user->name;
-        return view('home')->with('ininama', $nama);
+        if (Auth::user()->id_privilege == 1) {
+            return view('home');
+        }
+        else{
+            return view('cshome');
+        }
     }
 }

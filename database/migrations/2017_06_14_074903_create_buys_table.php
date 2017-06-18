@@ -1,10 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
-class CreatePembeliansTable extends Migration
+class CreateBuysTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +12,16 @@ class CreatePembeliansTable extends Migration
      */
     public function up()
     {
-        Schema::create('pembelians', function (Blueprint $table) {
+        Schema::create('buys', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('nama');
             $table->string('alamat');
             $table->string('nomor_hp');
             $table->string('nomor_ktp');
+            $table->string('kode_kereta');
+            $table->integer('nomor_gerbong');
+            $table->integer('nomor_kursi');
+            $table->timestamps();
         });
     }
 
@@ -29,6 +32,6 @@ class CreatePembeliansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pembelians');
+        Schema::drop('buys');
     }
 }
