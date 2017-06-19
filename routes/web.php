@@ -28,3 +28,6 @@ Route::resource('trains', 'TrainsController');
 
 Route::get('/trains', 'TrainsController@index')->name('train');
 
+Route::get('/history', 'BuysController@history')->name('history');
+
+Route::get('/pdfview',array('as'=>'pdfview','uses'=>'ItemController@pdfview'));

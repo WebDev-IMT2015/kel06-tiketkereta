@@ -30,23 +30,27 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>ID</th><th>Kode</th><th>Nama</th><th>Jumlah Gerbong</th><th>Kapasitas Gerbong</th><th>Actions</th>
+                                        <th>ID</th><th>Kode</th><th>Nama</th><th>Jumlah Gerbong</th><th>Kapasitas Gerbong</th><th>Tujuan Awal</th><th>Tujuan Akhir</th><th>Jam Berangkat</th><th>Jam Tiba</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($trains as $item)
                                     <tr>
-                                        <td>{{ $item->id }}</td>
+                                        <td>{{ $item->id_kereta }}</td>
                                         <td>{{ $item->kode_kereta }}</td>
-                                        <td>{{ $item->nama }}</td>
+                                        <td>{{ $item->nama_kereta }}</td>
                                         <td>{{ $item->jumlah_gerbong }}</td>
                                         <td>{{ $item->kapasitas_per_gerbong }}</td>
+                                        <td>{{ $item->tujuanawal }}</td>
+                                        <td>{{ $item->tujuanakhir }}</td>
+                                        <td>{{ $item->jamberangkat }}</td>
+                                        <td>{{ $item->jamtiba }}</td>
                                         <td>
-                                            <a href="{{ url('/trains/' . $item->id) }}" title="View Train"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            <a href="{{ url('/trains/' . $item->id . '/edit') }}" title="Edit Train"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                            <a href="{{ url('/trains/' . $item->id_kereta) }}" title="View Train"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                            <a href="{{ url('/trains/' . $item->id_kereta . '/edit') }}" title="Edit Train"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
                                             {!! Form::open([
                                                 'method'=>'DELETE',
-                                                'url' => ['/trains', $item->id],
+                                                'url' => ['/trains', $item->id_kereta],
                                                 'style' => 'display:inline'
                                             ]) !!}
                                                 {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> Delete', array(

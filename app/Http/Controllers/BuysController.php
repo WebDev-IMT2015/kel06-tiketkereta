@@ -6,8 +6,10 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Buy;
+use App\Train;
 use Illuminate\Http\Request;
 use Session;
+use DB;
 
 class BuysController extends Controller
 {
@@ -31,6 +33,29 @@ class BuysController extends Controller
         return view('buys.index', compact('buys'));
     }
 
+    public function history(Request $request)
+    {
+        $keyword = $request->get('search');
+        $perPage = 25;
+
+        if (!empty($keyword)) {
+            $buys = DB::table('buys')
+            ->join('trains', 'trains.id_kereta', '=', 'buys.id_kereta')
+            //->join('orders', 'users.id', '=', 'orders.user_id')
+            ->select('buys.*', 'trains.*')
+            ->where('buys.id', 'LIKE', "%$keyword%")
+            ->paginate(25);
+        } else {
+             $buys = DB::table('buys')
+            ->join('trains', 'trains.id_kereta', '=', 'buys.id_kereta')
+            //->join('orders', 'users.id', '=', 'orders.user_id')
+            ->select('buys.*', 'trains.*')
+            ->paginate(25);
+        }
+       
+        return view('buys.history', compact('buys'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -38,7 +63,8 @@ class BuysController extends Controller
      */
     public function create()
     {
-        return view('buys.create');
+        $trains = Train::all(['id_kereta', 'kode_kereta', 'nama_kereta', 'jumlah_gerbong', 'kapasitas_per_gerbong', 'tujuanawal', 'tujuanakhir', 'jamberangkat', 'jamtiba']);
+        return view('buys.create', compact('trains'));
     }
 
     /**
@@ -53,11 +79,21 @@ class BuysController extends Controller
         
         $requestData = $request->all();
         
-        Buy::create($requestData);
+         if(Buy::create($requestData))
+        {
+            $trains = Train::findOrFail($request->input('id_kereta'));
+            $trains->kapasitas_per_gerbong = $trains->kapasitas_per_gerbong - 1;
+            $trains->update();
+        }
 
-        Session::flash('flash_message', 'Buy added!');
+        Session::flash('flash_message', 'Buys added!');
 
         return redirect('buys');
+        Buy::create($requestData);
+
+        // Session::flash('flash_message', 'Buy added!');
+
+        // return redirect('buys');
     }
 
     /**
@@ -124,4 +160,5 @@ class BuysController extends Controller
 
         return redirect('buys');
     }
+
 }

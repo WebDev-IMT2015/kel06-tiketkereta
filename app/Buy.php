@@ -25,7 +25,12 @@ class Buy extends Model
      *
      * @var array
      */
-    protected $fillable = ['nama', 'alamat', 'nomor_hp', 'nomor_ktp', 'kode_kereta', 'nomor_gerbong', 'nomor_kursi'];
+    protected $fillable = ['nama', 'alamat', 'nomor_hp', 'nomor_ktp', 'id_kereta'];
+
+    public function train()
+    {
+        return $this->hasMany('id_kereta');
+    }
 
     
 }

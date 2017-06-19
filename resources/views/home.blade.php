@@ -15,7 +15,7 @@
             </div>
             <div class="panel panel-default">
                 <div class="container_web">
-                    <a href="{{ route('buy') }}">Buy</a>
+                    <a href="{{ route('history') }}">History</a>
                     <br>
                     <a href="{{ route('train') }}">Train</a>
                     <br>    

@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Train;
+use App\Post;
 use Illuminate\Http\Request;
 use Session;
 
-class TrainsController extends Controller
+class PostsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,13 +22,13 @@ class TrainsController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $trains = Train::where('nama_kereta', 'LIKE', "%$keyword%")
+            $posts = Post::where('title', 'LIKE', "%$keyword%")
 				->paginate($perPage);
         } else {
-            $trains = Train::paginate($perPage);
+            $posts = Post::paginate($perPage);
         }
 
-        return view('trains.index', compact('trains'));
+        return view('posts.index', compact('posts'));
     }
 
     /**
@@ -38,7 +38,7 @@ class TrainsController extends Controller
      */
     public function create()
     {
-        return view('trains.create');
+        return view('posts.create');
     }
 
     /**
@@ -53,11 +53,11 @@ class TrainsController extends Controller
         
         $requestData = $request->all();
         
-        Train::create($requestData);
+        Post::create($requestData);
 
-        Session::flash('flash_message', 'Train added!');
+        Session::flash('flash_message', 'Post added!');
 
-        return redirect('trains');
+        return redirect('posts');
     }
 
     /**
@@ -69,9 +69,9 @@ class TrainsController extends Controller
      */
     public function show($id)
     {
-        $train = Train::findOrFail($id);
+        $post = Post::findOrFail($id);
 
-        return view('trains.show', compact('train'));
+        return view('posts.show', compact('post'));
     }
 
     /**
@@ -83,9 +83,9 @@ class TrainsController extends Controller
      */
     public function edit($id)
     {
-        $train = Train::findOrFail($id);
+        $post = Post::findOrFail($id);
 
-        return view('trains.edit', compact('train'));
+        return view('posts.edit', compact('post'));
     }
 
     /**
@@ -101,12 +101,12 @@ class TrainsController extends Controller
         
         $requestData = $request->all();
         
-        $train = Train::findOrFail($id);
-        $train->update($requestData);
+        $post = Post::findOrFail($id);
+        $post->update($requestData);
 
-        Session::flash('flash_message', 'Train updated!');
+        Session::flash('flash_message', 'Post updated!');
 
-        return redirect('trains');
+        return redirect('posts');
     }
 
     /**
@@ -118,10 +118,10 @@ class TrainsController extends Controller
      */
     public function destroy($id)
     {
-        Train::destroy($id);
+        Post::destroy($id);
 
-        Session::flash('flash_message', 'Train deleted!');
+        Session::flash('flash_message', 'Post deleted!');
 
-        return redirect('trains');
+        return redirect('posts');
     }
 }

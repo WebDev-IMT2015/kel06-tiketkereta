@@ -34,6 +34,9 @@
                                         <th>ID</th><td>{{ $buy->id }}</td>
                                     </tr>
                                     <tr><th> Nama </th><td> {{ $buy->nama }} </td></tr>
+                                    <tr><th> Alamat </th><td> {{ $buy->alamat }} </td></tr>
+                                    <tr><th> Nomor HP </th><td> {{ $buy->nomor_hp }} </td></tr>
+                                    <tr><th> Nomor KTP </th><td> {{ $buy->nomor_ktp }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

@@ -33,7 +33,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $train->id }}</td>
                                     </tr>
-                                    <tr><th> Nama </th><td> {{ $train->nama }} </td></tr>
+                                    <tr><th> Nama </th><td> {{ $train->nama_kereta }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

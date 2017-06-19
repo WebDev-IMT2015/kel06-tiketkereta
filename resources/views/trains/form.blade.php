@@ -5,11 +5,11 @@
         {!! $errors->first('kode_kereta', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
-<div class="form-group {{ $errors->has('nama') ? 'has-error' : ''}}">
-    {!! Form::label('nama', 'Nama', ['class' => 'col-md-4 control-label']) !!}
+<div class="form-group {{ $errors->has('nama_kereta') ? 'has-error' : ''}}">
+    {!! Form::label('nama_kereta', 'Nama', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::text('nama', null, ['class' => 'form-control']) !!}
-        {!! $errors->first('nama', '<p class="help-block">:message</p>') !!}
+        {!! Form::text('nama_kereta', null, ['class' => 'form-control']) !!}
+        {!! $errors->first('nama_kereta', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 <div class="form-group {{ $errors->has('jumlah_gerbong') ? 'has-error' : ''}}">
@@ -24,6 +24,34 @@
     <div class="col-md-6">
         {!! Form::text('kapasitas_per_gerbong', null, ['class' => 'form-control']) !!}
         {!! $errors->first('kapasitas_per_gerbong', '<p class="help-block">:message</p>') !!}
+    </div>
+</div>
+<div class="form-group {{ $errors->has('tujuanawal') ? 'has-error' : ''}}">
+    {!! Form::label('tujuanawal', 'Tujuan Awal', ['class' => 'col-md-4 control-label']) !!}
+    <div class="col-md-6">
+        {!! Form::text('tujuanawal', null, ['class' => 'form-control']) !!}
+        {!! $errors->first('tujuanawal', '<p class="help-block">:message</p>') !!}
+    </div>
+</div>
+<div class="form-group {{ $errors->has('tujuanakhir') ? 'has-error' : ''}}">
+    {!! Form::label('tujuanakhir', 'Tujuan Akhir', ['class' => 'col-md-4 control-label']) !!}
+    <div class="col-md-6">
+        {!! Form::text('tujuanakhir', null, ['class' => 'form-control']) !!}
+        {!! $errors->first('tujuanakhir', '<p class="help-block">:message</p>') !!}
+    </div>
+</div>
+<div class="form-group {{ $errors->has('jamberangkat') ? 'has-error' : ''}}">
+    {!! Form::label('jamberangkat', 'Jam Berangkat', ['class' => 'col-md-4 control-label']) !!}
+    <div class="col-md-6">
+        {!! Form::text('jamberangkat', null, ['class' => 'form-control']) !!}
+        {!! $errors->first('jamberangkat', '<p class="help-block">:message</p>') !!}
+    </div>
+</div>
+<div class="form-group {{ $errors->has('jamtiba') ? 'has-error' : ''}}">
+    {!! Form::label('jamtiba', 'Jam Tiba', ['class' => 'col-md-4 control-label']) !!}
+    <div class="col-md-6">
+        {!! Form::text('jamtiba', null, ['class' => 'form-control']) !!}
+        {!! $errors->first('jamtiba', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 <div class="form-group">
