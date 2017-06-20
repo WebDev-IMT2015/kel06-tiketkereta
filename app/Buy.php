@@ -29,7 +29,7 @@ class Buy extends Model
 
     public function train()
     {
-        return $this->hasMany('id_kereta');
+        return $this->hasOne('App\Train','id_kereta', 'id_kereta');
     }
 
     

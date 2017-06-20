@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 
 @section('content')
@@ -30,18 +29,24 @@
                                         <td>{{ $item->alamat }}</td>
                                         <td>{{ $item->nomor_hp }}</td>
                                         <td>{{ $item->nomor_ktp }}</td>
-                                        <td>{{ $item->kode_kereta }}</td>
-                                        <td>{{ $item->tujuanawal }}</td>
-                                        <td>{{ $item->tujuanakhir }}</td>
-                                        <td>{{ $item->jamberangkat }}</td>
-                                        <td>{{ $item->jamtiba }}</td>
+                                        <td>{{ $item->train()->first()->kode_kereta }}</td>
+                                        <td>{{ $item->train()->first()->tujuanawal }}</td>
+                                        <td>{{ $item->train()->first()->tujuanakhir }}</td>
+                                        <td>{{ $item->train()->first()->jamberangkat }}</td>
+                                        <td>{{ $item->train()->first()->jamtiba }}</td>
                                     </tr>
                                 @endforeach
+
+                                
                                 </tbody>
                             </table>
-                            <div class="pagination-wrapper"> {!! $buys->appends(['search' => Request::get('search')])->render() !!} </div>
-                        </div>
+                            <button onclick="myFunction()">Print this page</button>
 
+                                <script>
+                                function myFunction() {
+                                    window.print();
+                                }
+                                </script>
                     </div>
                 </div>
             </div>

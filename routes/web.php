@@ -30,4 +30,10 @@ Route::get('/trains', 'TrainsController@index')->name('train');
 
 Route::get('/history', 'BuysController@history')->name('history');
 
-Route::get('/pdfview',array('as'=>'pdfview','uses'=>'ItemController@pdfview'));
+Route::get('/print', function(){
+	return view('print');
+});
+
+// Route::get('/pdfview',array('as'=>'pdfview','uses'=>'BuysController@pdfview'));
+
+Route::get('/print', 'BuysController@print')->name('print');

@@ -161,4 +161,13 @@ class BuysController extends Controller
         return redirect('buys');
     }
 
+     public function print(Request $request)
+    {
+
+
+        $buy = Buy::all();
+        return view('buys.print')->with('buys', $buy);
+        
+    }
+
 }
