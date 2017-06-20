@@ -49,7 +49,7 @@
                                         <td>
                                             {{-- <a href="{{ url('/trains/' . $item->id_kereta) }}" title="View Train"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a> --}}
                                             <a href="{{ url('/trains/' . $item->id_kereta . '/edit') }}" title="Edit Train"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-                                            {!! Form::open([
+                                            {{-- {!! Form::open([
                                                 'method'=>'DELETE',
                                                 'url' => ['/trains', $item->id_kereta],
                                                 'style' => 'display:inline'
@@ -60,7 +60,7 @@
                                                         'title' => 'Delete Train',
                                                         'onclick'=>'return confirm("Confirm delete?")'
                                                 )) !!}
-                                            {!! Form::close() !!}
+                                            {!! Form::close() !!} --}}
                                         </td>
                                     </tr>
                                 @endforeach
