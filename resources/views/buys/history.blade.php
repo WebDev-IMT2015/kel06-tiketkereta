@@ -19,7 +19,7 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>Id Transaksi</th><th>Nama</th><th>Alamat</th><th>Nomor HP</th><th>Nomor KTP</th><th>Kode Kereta</th><th>Tujuan Awal</th><th>Tujuan Akhir</th><th>Jam Berangkat</th><th>Jam Tiba</th><
+                                        <th>Id Transaksi</th><th>Nama</th><th>Alamat</th><th>Nomor HP</th><th>Nomor KTP</th><th>Kode Kereta</th><th>Tujuan Awal</th><th>Tujuan Akhir</th><th>Jam Berangkat</th><th>Jam Tiba</th><th>Tarif</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -35,6 +35,7 @@
                                         <td>{{ $item->tujuanakhir }}</td>
                                         <td>{{ $item->jamberangkat }}</td>
                                         <td>{{ $item->jamtiba }}</td>
+                                        <td>{{ $item->tarif }}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>

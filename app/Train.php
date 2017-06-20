@@ -25,5 +25,5 @@ class Train extends Model
      *
      * @var array
      */
-    protected $fillable = ['kode_kereta', 'nama_kereta', 'jumlah_gerbong', 'kapasitas_per_gerbong', 'tujuanawal', 'tujuanakhir', 'jamberangkat', 'jamtiba'];
+    protected $fillable = ['kode_kereta', 'nama_kereta', 'jumlah_gerbong', 'kapasitas_per_gerbong', 'tujuanawal', 'tujuanakhir', 'jamberangkat', 'jamtiba', 'tarif'];
 }

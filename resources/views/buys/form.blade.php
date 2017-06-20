@@ -33,10 +33,10 @@
           <select class="form-control" name="id_kereta">
           
             @foreach($trains as $item)
-              <option value="{{$item->id_kereta}}">{{$item->kode_kereta}} / {{$item->nama_kereta}} / {{$item->kapasitas_per_gerbong}} / {{$item->tujuanawal}} / {{$item->tujuanakhir}} / {{$item->jamberangkat}} - {{$item->jamtiba}}</option>
+              <option value="{{$item->id_kereta}}">{{$item->kode_kereta}} / {{$item->nama_kereta}} / {{$item->kapasitas_per_gerbong}} / {{$item->tujuanawal}} / {{$item->tujuanakhir}} / {{$item->jamberangkat}} - {{$item->jamtiba}} / {{$item->tarif}}</option>
             @endforeach
           </select>
-          <p>Kode Kereta / Nama Kereta / Kapasitas / Tujuan Awal / Tujuan Akhir / Jam Berangkat - Jam Tiba</p>
+          <p>Kode Kereta / Nama Kereta / Kapasitas / Tujuan Awal / Tujuan Akhir / Jam Berangkat - Jam Tiba / Tarif</p>
     </div>
 </div>
 

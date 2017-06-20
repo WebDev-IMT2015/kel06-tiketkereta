@@ -40,7 +40,7 @@
                                         <td>{{ $item->nama }}</td>
                                         <td>
                                             <a href="{{ url('/buys/' . $item->id) }}" title="View Buy"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            <a href="{{ url('/print') }}" title="Print Buy"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Print</button></a>
+                                            {{-- <a href="{{ url('/print' ) }}" title="Print Buy"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Print</button></a> --}}
                                             {!! Form::open([
                                                 'method'=>'DELETE',
                                                 'url' => ['/buys', $item->id],

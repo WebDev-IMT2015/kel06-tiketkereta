@@ -22,6 +22,7 @@ class CreateTrainsTable extends Migration
             $table->string('tujuanakhir');
             $table->time('jamberangkat');
             $table->time('jamtiba');
+            $table->integer('tarif');
             $table->timestamps();
         });
     }

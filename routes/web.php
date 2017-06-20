@@ -28,6 +28,8 @@ Route::resource('trains', 'TrainsController');
 
 Route::get('/trains', 'TrainsController@index')->name('train');
 
+// Route::post('/trains', 'TrainsController@edit')->name('train');
+
 Route::get('/history', 'BuysController@history')->name('history');
 
 Route::get('/print', function(){

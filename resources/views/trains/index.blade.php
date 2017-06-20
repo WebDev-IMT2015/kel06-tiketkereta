@@ -18,7 +18,7 @@
                             <input type="text" class="form-control" name="search" placeholder="Search...">
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="submit">
-                                    <i class="fa fa-search"></i>
+                                    <i class="fa fa-search">OK</i>
                                 </button>
                             </span>
                         </div>
@@ -30,7 +30,7 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>ID</th><th>Kode</th><th>Nama</th><th>Jumlah Gerbong</th><th>Kapasitas Gerbong</th><th>Tujuan Awal</th><th>Tujuan Akhir</th><th>Jam Berangkat</th><th>Jam Tiba</th><th>Actions</th>
+                                        <th>ID</th><th>Kode</th><th>Nama</th><th>Jumlah Gerbong</th><th>Kapasitas Gerbong</th><th>Tujuan Awal</th><th>Tujuan Akhir</th><th>Jam Berangkat</th><th>Jam Tiba</th><th>Tarif</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -45,8 +45,9 @@
                                         <td>{{ $item->tujuanakhir }}</td>
                                         <td>{{ $item->jamberangkat }}</td>
                                         <td>{{ $item->jamtiba }}</td>
+                                        <td>{{ $item->tarif }}</td>
                                         <td>
-                                            <a href="{{ url('/trains/' . $item->id_kereta) }}" title="View Train"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                            {{-- <a href="{{ url('/trains/' . $item->id_kereta) }}" title="View Train"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a> --}}
                                             <a href="{{ url('/trains/' . $item->id_kereta . '/edit') }}" title="Edit Train"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
                                             {!! Form::open([
                                                 'method'=>'DELETE',
