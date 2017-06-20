@@ -43,14 +43,14 @@
 <div class="form-group {{ $errors->has('jamberangkat') ? 'has-error' : ''}}">
     {!! Form::label('jamberangkat', 'Jam Berangkat', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::text('jamberangkat', null, ['class' => 'form-control']) !!}
+        {!! Form::input('time', 'jamberangkat', null, ['class' => 'form-control']) !!}
         {!! $errors->first('jamberangkat', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 <div class="form-group {{ $errors->has('jamtiba') ? 'has-error' : ''}}">
     {!! Form::label('jamtiba', 'Jam Tiba', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::text('jamtiba', null, ['class' => 'form-control']) !!}
+        {!! Form::input('time', 'jamtiba', null, ['class' => 'form-control']) !!}
         {!! $errors->first('jamtiba', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
