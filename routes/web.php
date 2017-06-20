@@ -43,4 +43,4 @@ Route::get('/print', 'BuysController@print')->name('print');
 
 Route::resource('users', 'UsersController');
 
-Route::get('/users', 'usersController@index')->name('user');
+Route::get('/users', 'UsersController@index')->name('user');
