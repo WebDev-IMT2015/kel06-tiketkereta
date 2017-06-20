@@ -37,3 +37,8 @@ Route::get('/print', function(){
 // Route::get('/pdfview',array('as'=>'pdfview','uses'=>'BuysController@pdfview'));
 
 Route::get('/print', 'BuysController@print')->name('print');
+
+
+Route::resource('users', 'UsersController');
+
+Route::get('/users', 'usersController@index')->name('user');

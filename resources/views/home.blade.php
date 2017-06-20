@@ -18,7 +18,11 @@
                     <a href="{{ route('history') }}">History</a>
                     <br>
                     <a href="{{ route('train') }}">Train</a>
-                    <br>    
+                    <br>   
+                    <a href="{{ route('user') }}">Register CS</a>
+                    <br>     
+
+                   
                     
                 </div>
             </div>
